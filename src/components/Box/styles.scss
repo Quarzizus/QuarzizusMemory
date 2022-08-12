@@ -6,4 +6,13 @@
   align-items: center;
   justify-content: center;
   background-color: #304859;
+  transition: 0.2s ease background;
+}
+
+.Selected {
+  background-color: #fda214;
+}
+
+.Matched {
+  background-color: yellowgreen;
 }
