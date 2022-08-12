@@ -1,7 +1,7 @@
 import "./styles.scss";
 
 const Box = () => {
-  return <div>Box</div>;
+  return <div className="Box">Box</div>;
 };
 
 export { Box };
