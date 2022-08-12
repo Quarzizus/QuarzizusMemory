@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { validateIsSelected } from "../../actions/validateIsSelected";
 import { BoxesContext } from "../../context/boxes/BoxesContext";
-import { LevelsContext } from "../../context/levels/LevelsContext";
+import { GeneralContext } from "../../context/general/GeneralContext";
 import { useLevelsSetup } from "../Levels/useLevelsSetup";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 const useSelectsSetup = ({ boxRef, id }: Props) => {
   const [{ currentSelecteds, selecteds, isMatched }, dispatch] =
     useContext(BoxesContext);
-  const { handleLevelUp } = useContext(LevelsContext);
+  const [{ level }, generalDispatch] = useContext(GeneralContext);
 
   const { numberOfBoxes } = useLevelsSetup();
 
@@ -42,7 +42,6 @@ const useSelectsSetup = ({ boxRef, id }: Props) => {
   useEffect(() => {
     if (validateIsSelected(selecteds, id)) {
       boxRef.current?.classList.replace("Selected", "Matched");
-      console.log(selecteds);
       dispatch({ type: "RESET_CURRENT_SELECTEDS" });
     }
     if (selecteds.length === numberOfBoxes) {
@@ -51,7 +50,7 @@ const useSelectsSetup = ({ boxRef, id }: Props) => {
         dispatch({
           type: "RESET_STATE",
         });
-        handleLevelUp();
+        generalDispatch({ type: "SET_LEVEL", payload: level + 1 });
       }, 1000);
     }
   }, [selecteds.length]);

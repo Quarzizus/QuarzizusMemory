@@ -1,0 +1,18 @@
+.StartButton {
+  border: none;
+  padding: 7px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Cabin", sans-serif;
+  width: 100px;
+  height: 60px;
+  background-color: #fda214;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s ease box-shadow;
+}
+
+.StartButton:hover {
+  box-shadow: 0px 0px 15px -4px #000000;
+}

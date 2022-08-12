@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react";
 import { BoxesContext } from "../../context/boxes/BoxesContext";
+import { GeneralContext } from "../../context/general/GeneralContext";
 import { useSelectsSetup } from "../../hooks/Selects/useSelectsSetup";
 import "./styles.scss";
 
@@ -8,11 +9,13 @@ interface Props {
 }
 
 const Box = ({ id }: Props) => {
+  const [{ startGame }] = useContext(GeneralContext);
   const [{ currentSelecteds }, dispatch] = useContext(BoxesContext);
   const boxRef = useRef<HTMLDivElement | null>(null);
   useSelectsSetup({ boxRef, id });
 
   const handleSelect = () => {
+    if (!startGame) return;
     if (currentSelecteds.length >= 2) return;
     dispatch({
       type: "SET_CURRENT_SELECTEDS",
