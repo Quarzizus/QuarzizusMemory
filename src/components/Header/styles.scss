@@ -1,0 +1,24 @@
+.Header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-left: 30px;
+
+  h1 {
+    font-family: "Lobster Two", cursive;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .Header {
+    padding: 0;
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.3rem;
+    }
+  }
+}

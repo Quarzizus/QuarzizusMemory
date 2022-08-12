@@ -5,9 +5,9 @@ interface ListOfBoxexCpType {
 }
 
 const ListOfBoxesCp = styled.section<ListOfBoxexCpType>`
-  max-width: 550px;
-  height: 550px;
-  margin: 20px auto 0 auto;
+  max-width: 520px;
+  height: 520px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(
@@ -18,6 +18,11 @@ const ListOfBoxesCp = styled.section<ListOfBoxexCpType>`
     ${({ numberOfColumnsAndRows }) => numberOfColumnsAndRows},
     1fr
   );
+
+  @media screen and (max-width: 570px) {
+    width: 90vw;
+    height: 90vw;
+  }
 `;
 
 export { ListOfBoxesCp };
