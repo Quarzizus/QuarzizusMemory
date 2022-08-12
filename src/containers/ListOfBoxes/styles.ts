@@ -4,7 +4,7 @@ interface ListOfBoxexCpType {
   numberOfColumnsAndRows: number;
 }
 
-const ListOfBoxexCp = styled.section<ListOfBoxexCpType>`
+const ListOfBoxesCp = styled.section<ListOfBoxexCpType>`
   max-width: 550px;
   height: 550px;
   margin: 20px auto 0 auto;
@@ -20,4 +20,4 @@ const ListOfBoxexCp = styled.section<ListOfBoxexCpType>`
   );
 `;
 
-export { ListOfBoxexCp };
+export { ListOfBoxesCp };

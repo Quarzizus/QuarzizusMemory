@@ -1,20 +1,19 @@
 import { useState } from "react";
-import { ListOfBoxexCp } from "./styles";
+import { ListOfBoxesCp } from "./styles";
 import { Box } from "../../components/Box";
+import { useLevelsSetup } from "../../hooks/Levels/useLevelsSetup";
 
 const ListOfBoxes = () => {
-  const [level, setLevel] = useState(1);
-  const numberOfBoxes = (level + 1) * 2;
-  const numberOfColumnsAndRows = Math.ceil(Math.sqrt(numberOfBoxes));
+  const { handleLevelUp, boxes, numberOfColumnsAndRows } = useLevelsSetup();
 
   return (
     <>
-      <ListOfBoxexCp numberOfColumnsAndRows={numberOfColumnsAndRows}>
-        {Array.from({ length: numberOfBoxes }, (_n) => (
-          <Box />
+      <ListOfBoxesCp numberOfColumnsAndRows={numberOfColumnsAndRows}>
+        {boxes.map((box) => (
+          <Box id={box} />
         ))}
-      </ListOfBoxexCp>
-      <button onClick={() => setLevel(level + 1)}> level up </button>
+      </ListOfBoxesCp>
+      <button onClick={handleLevelUp}> level up </button>
     </>
   );
 };
