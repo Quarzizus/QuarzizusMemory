@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LevelsContext } from "../../context/levels/LevelsContext";
 import { randomSorting } from "../../helpers/randomSorting";
 
 const useLevelsSetup = () => {
-  const [level, setLevel] = useState(1);
+  const { level } = useContext(LevelsContext);
   const numberOfBoxes = (level + 1) * 2;
   const numberOfColumnsAndRows = Math.ceil(Math.sqrt(numberOfBoxes));
 
@@ -16,11 +17,7 @@ const useLevelsSetup = () => {
 
   const boxes = randomSorting(totalOfBoxex);
 
-  const handleLevelUp = () => {
-    setLevel(level + 1);
-  };
-
-  return { handleLevelUp, numberOfBoxes, numberOfColumnsAndRows, boxes };
+  return { numberOfBoxes, numberOfColumnsAndRows, boxes };
 };
 
 export { useLevelsSetup };

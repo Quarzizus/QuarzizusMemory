@@ -1,5 +1,11 @@
 import { Action, State } from "./types";
 
+const initialState: State = {
+  currentSelecteds: [],
+  selecteds: [],
+  isMatched: null,
+};
+
 const BoxesReducer = (state: State, action: Action) => {
   switch (action.type) {
     case "SET_CURRENT_SELECTEDS":
@@ -23,6 +29,8 @@ const BoxesReducer = (state: State, action: Action) => {
         currentSelecteds: [],
         isMatched: null,
       };
+    case "RESET_STATE":
+      return initialState;
     default:
       return state;
   }

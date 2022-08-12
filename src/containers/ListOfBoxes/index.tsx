@@ -2,9 +2,12 @@ import { ListOfBoxesCp } from "./styles";
 import { Box } from "../../components/Box";
 import { useLevelsSetup } from "../../hooks/Levels/useLevelsSetup";
 import { BoxesProvider } from "../../context/boxes/BoxesContext";
+import { LevelsContext } from "../../context/levels/LevelsContext";
+import { useContext } from "react";
 
 const ListOfBoxes = () => {
-  const { handleLevelUp, boxes, numberOfColumnsAndRows } = useLevelsSetup();
+  const { boxes, numberOfColumnsAndRows } = useLevelsSetup();
+  const { handleLevelUp } = useContext(LevelsContext);
 
   return (
     <BoxesProvider>
