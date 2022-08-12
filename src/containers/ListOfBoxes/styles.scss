@@ -1,0 +1,9 @@
+.ListOfBoxes {
+  max-width: 550px;
+  height: 550px;
+  margin: 20px auto 0 auto;
+  background-color: rgb(177, 177, 177);
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: repeat(2, 1fr);
+}
