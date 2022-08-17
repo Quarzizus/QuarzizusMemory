@@ -4,9 +4,10 @@ interface ListOfBoxexCpType {
   numberOfColumnsAndRows: number;
 }
 
+const size = 460;
 const ListOfBoxesCp = styled.section<ListOfBoxexCpType>`
-  max-width: 520px;
-  height: 520px;
+  width: ${size}px;
+  height: ${size}px;
   margin: 0 auto;
   display: grid;
   place-items: center;

@@ -13,8 +13,10 @@ const App = () => {
       <ListOfBoxes />
       <Footer>
         <StartButton />
-        <Counter />
-        <Movements />
+        <StartButton />
+        <StartButton />
+        {/* <Counter />
+        <Movements /> */}
       </Footer>
     </div>
   );
