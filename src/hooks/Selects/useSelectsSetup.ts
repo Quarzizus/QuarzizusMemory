@@ -27,23 +27,28 @@ const useSelectsSetup = ({ boxRef, id }: Props) => {
   useEffect(() => {
     if (!validateIsSelected(currentSelecteds, id)) return;
     if (isMatched === null) return;
+
+    // matched
     if (!!isMatched) {
       dispatch({ type: "SET_SELECTEDS" });
       return;
     }
-    setTimeout(() => {
-      if (!isMatched) {
+    // no matched
+    if (!isMatched) {
+      setTimeout(() => {
         boxRef.current?.classList.remove("Selected");
         dispatch({ type: "RESET_CURRENT_SELECTEDS" });
-      }
-    }, 1000);
+      }, 1000);
+    }
   }, [isMatched]);
 
   useEffect(() => {
+    // Add class matched
     if (validateIsSelected(selecteds, id)) {
       boxRef.current?.classList.replace("Selected", "Matched");
       dispatch({ type: "RESET_CURRENT_SELECTEDS" });
     }
+    // finish game
     if (selecteds.length === numberOfBoxes) {
       setTimeout(() => {
         boxRef.current?.classList.remove("Matched");
