@@ -15,6 +15,8 @@ const Box = ({ id }: Props) => {
   useSelectsSetup({ boxRef, id });
 
   const handleSelect = () => {
+    if (boxRef.current?.classList.contains("Selected")) return;
+    if (boxRef.current?.classList.contains("Matched")) return;
     if (!startGame) return;
     if (currentSelecteds.length >= 2) return;
     dispatch({
