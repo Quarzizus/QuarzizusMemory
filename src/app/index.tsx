@@ -13,9 +13,10 @@ const App = () => {
       <ListOfBoxes />
       <Footer>
         <StartButton />
+        <Counter />
         <StartButton />
-        <StartButton />
-        {/* <Counter />
+        {/* <StartButton /> */}
+        {/* 
         <Movements /> */}
       </Footer>
     </div>
