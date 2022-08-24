@@ -48,7 +48,7 @@ const useSelectsSetup = ({ boxRef, id }: Props) => {
       boxRef.current?.classList.replace("Selected", "Matched");
       dispatch({ type: "RESET_CURRENT_SELECTEDS" });
     }
-    // finish game
+    // level up
     if (selecteds.length === numberOfBoxes) {
       setTimeout(() => {
         boxRef.current?.classList.remove("Matched");

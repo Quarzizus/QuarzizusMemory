@@ -11,7 +11,8 @@ const Counter = () => {
   return (
     <section className="Counter">
       <p>
-        {minutes}:{seconds}
+        {minutes.toString().padStart(2, "0")}:
+        {seconds.toString().padStart(2, "0")}
       </p>
     </section>
   );
