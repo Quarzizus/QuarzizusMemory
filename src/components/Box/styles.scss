@@ -6,13 +6,25 @@
   align-items: center;
   justify-content: center;
   background-color: #304859;
-  transition: 0.2s ease background;
+  transition: 0.2s ease all;
+}
+.Box > * {
+  display: none;
 }
 
 .Selected {
   background-color: #fda214;
+  transform: rotateY(180deg);
+}
+
+.Box.Selected > * {
+  display: flex;
 }
 
 .Matched {
   background-color: yellowgreen;
+}
+
+.Box.Matched > * {
+  display: flex;
 }
