@@ -4,7 +4,7 @@ const useTimer = (dependency: any) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let interval: number;
+    let interval: NodeJS.Timer;
     const clearIntervalHandle = () => clearInterval(interval);
     if (dependency) {
       interval = setInterval(() => {
