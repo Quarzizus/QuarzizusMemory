@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import { BoxesContext } from "../../context/boxes/BoxesContext";
 import { GeneralContext } from "../../context/general/GeneralContext";
 import { useSelectsSetup } from "../../hooks/Selects/useSelectsSetup";
+import { Character } from "../Character";
 import "./styles.scss";
 
 interface Props {
@@ -27,7 +28,7 @@ const Box = ({ id }: Props) => {
   };
   return (
     <div className="Box" ref={boxRef} onClick={handleSelect}>
-      {id}
+      <Character id={id} />
     </div>
   );
 };
