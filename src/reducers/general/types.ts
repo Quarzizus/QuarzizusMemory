@@ -1,6 +1,5 @@
 interface State {
   level: number;
-  movements: number;
   startGame: boolean;
 }
 

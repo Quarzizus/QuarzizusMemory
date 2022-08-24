@@ -7,6 +7,7 @@ const generalReducer = (state: State, action: Action) => {
         ...state,
         level: action.payload,
       };
+
     case "SET_START_GAME":
       return {
         ...state,

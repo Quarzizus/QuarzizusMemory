@@ -7,7 +7,6 @@ const GeneralContext = createContext({} as GeneralContextType);
 
 const initialState: State = {
   level: 1,
-  movements: 0,
   startGame: false,
 };
 
