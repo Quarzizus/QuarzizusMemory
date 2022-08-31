@@ -1,6 +1,6 @@
 # Quarzizus Memory
 
-![](src/images/Portada.webp)
+![](src/assets/Portada.png)
 
 Quarzizus Memory is a game focused in the memory with tematic **animals**
 
